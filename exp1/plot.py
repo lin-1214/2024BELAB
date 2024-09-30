@@ -172,3 +172,7 @@ plot_EEG('beta', EEG, 3, 'blue')
 plot_EEG('delta', EEG, 4, 'magenta')
 plot_EEG('theta', EEG, 5, 'red')
 plt.savefig(f'./output/EEG.png')
+
+print(f"[-]EEG 10s max-min: {max(EEG[0][:int(len(EEG[0])/3)]) - min(EEG[0][:int(len(EEG[0])/3)])}")
+print(f"[-]EEG 10-20s max-min: {max(EEG[0][int(len(EEG[0])/3):int(len(EEG[0])*2/3)]) - min(EEG[0][int(len(EEG[0])/3):int(len(EEG[0])*2/3)])}")
+print(f"[-]EEG 20-30s max-min: {max(EEG[0][int(len(EEG[0])*2/3):]) - min(EEG[0][int(len(EEG[0])*2/3):])}")
